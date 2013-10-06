@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>基于Pelican和github的静态博客搭建过程</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="/theme/css/bootstrap.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+	
+	.tag-1 {
+		font-size: 13pt;
+	}
+	
+	.tag-2 {
+		font-size: 10pt;
+	}
+	
+	.tag-2 {
+		font-size: 8pt;
+	}
+
+	.tag-4 {
+		font-size: 6pt;
+	}
+	
+    </style>
+    <link href="/theme/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="/theme/css/font-awesome.css" rel="stylesheet">
+	
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="/" type="application/atom+xml" rel="alternate" title="writing for time ATOM Feed" />
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">writing for time </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                          			  <li class="divider-vertical"></li>
+                                              <li >
+                    <a href="/category/django.html">
+						<i class="icon-folder-open icon-large"></i>django
+					</a>
+                  </li>
+                                <li class="active">
+                    <a href="/category/python.html">
+						<i class="icon-folder-open icon-large"></i>python
+					</a>
+                  </li>
+                                <li >
+                    <a href="/category/ubuntu.html">
+						<i class="icon-folder-open icon-large"></i>ubuntu
+					</a>
+                  </li>
+                                <li >
+                    <a href="/category/web.html">
+						<i class="icon-folder-open icon-large"></i>web
+					</a>
+                  </li>
+                                <li >
+                    <a href="/category/诗词.html">
+						<i class="icon-folder-open icon-large"></i>诗词
+					</a>
+                  </li>
+                                <li >
+                    <a href="/category/读书.html">
+						<i class="icon-folder-open icon-large"></i>读书
+					</a>
+                  </li>
+                                <li >
+                    <a href="/category/随笔.html">
+						<i class="icon-folder-open icon-large"></i>随笔
+					</a>
+                  </li>
+              			  
+			  <ul class="nav pull-right">
+				<li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+			  </ul>
+			  
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+            <section id="content">    
+	<article>
+		<header>
+			<h1>
+				<a href=""
+					rel="bookmark" 
+					title="Permalink to 基于Pelican和github的静态博客搭建过程">
+					基于Pelican和github的静态博客搭建过程 
+				</a>
+				 
+			</h1> 
+		</header>
+		<div class="entry-content">
+		<div class="well">
+			<footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-08-09T00:00:00">
+	<i class="icon-calendar"></i>五 09 八月 2013
+</abbr>
+<span class="label">By</span>
+<a href="/author/wuwenjie.html"><i class="icon-user"></i>wuwenjie</a>
+<span class="label">Category</span>
+<a href="/category/python.html"><i class="icon-folder-open"></i>python</a>. 
+
+	
+<span class="label">Tags</span> 
+	<a href="/tag/python.html"><i class="icon-tag"></i>python</a>
+</footer><!-- /.post-info -->		</div>
+		<p>前两天刚把博客搭好，如你所见，你所在的地方就是用<code>Pelican</code>搭建的  <br />
+为何使用<code>github</code>来搭建博客呢，<a href="#todo">这里</a>给出了理由 <br />
+Why not <a href="#todo">Jekyll</a>?  <br />
+Jekyll基于<code>ruby</code>,Pelican基于<code>python</code>，我更习惯python，如此而已 <br />
+使用Pelican之后，你只要用<code>markdown</code>格式写日志，Pelican会把markdown转换成<code>html</code>的格式，之后push到github pages上, 就可以看到你写的日志了，就是说你的所有工作就是用markdown写作，是不是很惬意^_^ <br />
+Pelican 的一些主要<code>特性</code>：</p>
+<ul>
+<li>Python实现，开放源码</li>
+<li>输出静态页面，方便托管</li>
+<li>支持主题，采用Jajin2模板引擎</li>
+<li>支持代码语法高亮</li>
+<li>支持reStructuredText、Markdown、AsciiDoc格式</li>
+<li>支持Disqus评论</li>
+<li>支持Atom和RSS输出</li>
+</ul>
+<p>闲话不说，进入主题 <br />
+我假设你是初来乍到的小白.（我也是小白啦～）虽说是小白,搭建这种geek类博客并没有你想象的费劲。just do it   <br />
+首先，你得把git给入门了，入门简单，要掌握的命令不多，这是<a href="#todo">git基本教程</a>（虽说git的学习曲线很陡峭，基本用法还是很容易的，don't worry about it） 
+我假设你掌握了基本的git命令，接着我们可以正式开始了 </p>
+<h2>安装linux系统</h2>
+<p>as a geek(或者渴望成为geek的小白）你还抱着win7不放么，还舍不得那熟悉的蓝屏么，还舍不得莫名其妙的报错么,果断抛弃娇气的windows，投入linux的怀抱吧。俺使用的发行版是Ubuntu12.04.一直很稳定且顺心  <br />
+你要执意使用window，之后可能在环境配置上得费些功夫，其他基本一样。
+本文的环境是Ubuntu12.04。</p>
+<h2>安装Pelican</h2>
+<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
+</pre></div>
+
+
+<h4>使用Markdown来写文章的话，还需要安装Markdown库</h4>
+<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
+</pre></div>
+
+
+<h4>创建blog目录：</h4>
+<div class="highlight"><pre><span class="n">mkdir</span> <span class="n">myblog</span>
+<span class="n">cd</span> <span class="n">myblog</span>
+</pre></div>
+
+
+<h4>创建一个博客：(在当前目录下，即myblog)</h4>
+<div class="highlight"><pre><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+
+
+<p>按照提示设置，可按默认的设置，之后可在pelicanconf.py文件中修改设置。</p>
+<p>以下是生成的目录结构：</p>
+<div class="highlight"><pre><span class="n">myblog</span><span class="o">/</span>     
+<span class="err">├──</span> <span class="n">content</span>              <span class="err">#</span> <span class="err">存放输入的源文件</span>  
+<span class="err">├──</span> <span class="n">output</span>               <span class="err">#</span> <span class="err">生成的输出文件</span>  
+<span class="err">├──</span> <span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span>    <span class="err">#</span> <span class="err">方便开启测试服务器</span>    
+<span class="err">├──</span> <span class="n">Makefile</span>             <span class="err">#</span> <span class="err">方便管理博客的</span><span class="n">Makefile</span>  
+<span class="err">├──</span> <span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span>       <span class="err">#</span> <span class="err">主配置文件</span>    
+<span class="err">└──</span> <span class="n">publishconf</span><span class="p">.</span><span class="n">py</span>       <span class="err">#</span> <span class="err">发布时使用的配置文件</span>
+</pre></div>
+
+
+<h4>写一篇文章</h4>
+<p>以mardown格式举例，具体可以去看pelican的文档. 进入content目录，创建一个文件，写入博客内容：</p>
+<div class="highlight"><pre><span class="n">Date</span><span class="o">:</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">9</span> <span class="err">#日期</span>
+
+<span class="n">Title</span><span class="o">:</span> <span class="n">test</span> <span class="err">＃标题</span>
+
+<span class="n">Tags</span><span class="o">:</span> <span class="n">python</span> <span class="n">pelican</span> <span class="n">github</span> <span class="err">#标签</span>
+
+<span class="n">Category</span><span class="o">:</span> <span class="n">python</span> <span class="err">#分类</span>
+</pre></div>
+
+
+<p>其中Date和Title是必须的，其它的可以不写  <br />
+如果该文件位于content目录中某个子目录中时，如./content/python，那pelican就把这篇文章分类为子目录名python</p>
+<h4>生成html</h4>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+
+
+<p>你将看到output文件夹里多了×××.html文件
+在myblog所在的地方新建一个myblog_for_github（名字随意）,把output里的文件复制到里面。 <br />
+为何呢，下文解释</p>
+<h2>在github上创建GitHub Pages</h2>
+<p>新建一个Repository，Repository名字为yourname.github.com，yourname是您的用户ID。</p>
+<p>创建成功以后，便可以把生成的页面push到github。</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">myblog_for_github</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;first commit&quot;</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/xxx/xxx.github.io.git</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+
+
+<p>现在可以通过 xxx.github.io 或者 xxx.github.com 来访问您的博客了。</p>
+<h2>修改以及更新博客</h2>
+<p>看了几篇资料，里面似乎都没有谈到后续继续写博客的问题，当然这不属于搭建的问题<br />
+顺带也提一下吧，做个备忘。 <br />
+当我们隔了几天继续写博客时，把写好的×××.md文件放到content文件夹里输入：<br />
+    make html
+之所以要把内容复制到myblog_for_github里再提交，是因为每次执行 
+    make html
+output里的文件会被覆盖，不能在这里git init，否则仓库会被删了 <br />
+至于增删改已经提交的博客的内容基本是git的任务，也就是本教程之初让你去入门git的原因  <br />
+会用到的一些指令：</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">rm</span> <span class="err">×××</span><span class="p">.</span><span class="n">html</span>    <span class="c1">//删除代码库中文件</span>
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span> 
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;some message&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+
+
+<h2>域名绑定</h2>
+<p>在repo的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如顶级域名 example.com 或者二级域名 xxx.example.com。</p>
+<p>遇到问题请谷歌,或者查看官方文档</p>
+<p>参考资料:</p>
+<ol>
+<li><a href="#todo">用pelican在github上创建博客极简教程</a></li>
+<li><a href="http://readthedocs.org/docs/pelican/en/2.8/">Pelican官方文档</a></li>
+<li><a href="#todo">用 Pelican 和 GitHub Pages 搭建免费的个人博客</a></li>
+</ol>
+		</div><!-- /.entry-content -->
+			</article>
+</section>
+        </div><!--/span-->
+      
+		<div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><i class="icon-external-link"></i><a href="https://github.com/wwj718">my github</a></li>
+    <li><i class="icon-external-link"></i><a href="wuwenjie718@gmail.com">my gmail</a></li>
+    <li><i class="icon-external-link"></i><a href="http://www.douban.com/people/59672556/">我的豆瓣</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="/category/django.html">
+    <i class="icon-folder-open icon-large"></i>django
+</a>
+</li>
+<li>
+<a href="/category/python.html">
+    <i class="icon-folder-open icon-large"></i>python
+</a>
+</li>
+<li>
+<a href="/category/ubuntu.html">
+    <i class="icon-folder-open icon-large"></i>ubuntu
+</a>
+</li>
+<li>
+<a href="/category/web.html">
+    <i class="icon-folder-open icon-large"></i>web
+</a>
+</li>
+<li>
+<a href="/category/诗词.html">
+    <i class="icon-folder-open icon-large"></i>诗词
+</a>
+</li>
+<li>
+<a href="/category/读书.html">
+    <i class="icon-folder-open icon-large"></i>读书
+</a>
+</li>
+<li>
+<a href="/category/随笔.html">
+    <i class="icon-folder-open icon-large"></i>随笔
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-4">
+    <a href="/tag/django.html">
+        <i class="icon-tag icon-large"></i>django
+    </a>
+</li>
+<li class="tag-1">
+    <a href="/tag/刘瑜.html">
+        <i class="icon-tag icon-large"></i>刘瑜
+    </a>
+</li>
+<li class="tag-4">
+    <a href="/tag/web.html">
+        <i class="icon-tag icon-large"></i>web
+    </a>
+</li>
+<li class="tag-4">
+    <a href="/tag/ubuntu.html">
+        <i class="icon-tag icon-large"></i>ubuntu
+    </a>
+</li>
+<li class="tag-4">
+    <a href="/tag/日记.html">
+        <i class="icon-tag icon-large"></i>日记
+    </a>
+</li>
+<li class="tag-1">
+    <a href="/tag/python.html">
+        <i class="icon-tag icon-large"></i>python
+    </a>
+</li>
+<li class="tag-1">
+    <a href="/tag/诗词.html">
+        <i class="icon-tag icon-large"></i>诗词
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+				which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is from <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>, 
+		   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+                
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/theme/js/jquery.js"></script>
+    <script src="/theme/js/bootstrap-transition.js"></script>
+    <script src="/theme/js/bootstrap-alert.js"></script>
+    <script src="/theme/js/bootstrap-modal.js"></script>
+    <script src="/theme/js/bootstrap-dropdown.js"></script>
+    <script src="/theme/js/bootstrap-scrollspy.js"></script>
+    <script src="/theme/js/bootstrap-tab.js"></script>
+    <script src="/theme/js/bootstrap-tooltip.js"></script>
+    <script src="/theme/js/bootstrap-popover.js"></script>
+    <script src="/theme/js/bootstrap-button.js"></script>
+    <script src="/theme/js/bootstrap-collapse.js"></script>
+    <script src="/theme/js/bootstrap-carousel.js"></script>
+    <script src="/theme/js/bootstrap-typeahead.js"></script>
+	
+	<!--<script src="/theme/js/autosidebar.js"></script>-->
+  </body>
+</html>
